@@ -1,6 +1,6 @@
 # Custom UI Component Library
 
-Reusable React components by `@vk-develop`. A collection of UI components including Button, Card, Input, Modal, Spinner, Accordion, Autocomplete, Alert, and Avatar.
+Reusable React components by `@vk-develop`. A collection of UI components including Button, Card, Input, Modal, Spinner, Accordion, Autocomplete, Alert, Avatar, Badge, and Breadcrumbs.
 
 ## Install (after publish)
 ```bash
@@ -9,7 +9,7 @@ npm install @vk-develop/custom-ui
 
 Use in your app:
 ```jsx
-import { Button, Card, Input, Modal, Spinner, Accordion, Autocomplete, Alert, Avatar } from '@vk-develop/custom-ui';
+import { Button, Card, Input, Modal, Spinner, Accordion, Autocomplete, Alert, Avatar, Badge, Breadcrumbs } from '@vk-develop/custom-ui';
 
 export default function App() {
   return (
@@ -212,6 +212,55 @@ import { Avatar } from '@vk-develop/custom-ui';
 // Shapes: circle, square
 ```
 
+### Badge
+A badge component for displaying labels, counts, or status indicators.
+
+```jsx
+import { Badge } from '@vk-develop/custom-ui';
+
+// Variants: default, primary, success, warning, error, info
+// Sizes: small, medium, large
+<Badge variant="primary">New</Badge>
+<Badge variant="success" size="small">Active</Badge>
+<Badge variant="error">3</Badge>
+
+// Dot badge (no text)
+<Badge variant="primary" dot size="medium" />
+```
+
+### Breadcrumbs
+A navigation breadcrumb component for showing the current page location.
+
+```jsx
+import { Breadcrumbs } from '@vk-develop/custom-ui';
+
+<Breadcrumbs
+  items={[
+    { label: 'Home', href: '/' },
+    { label: 'Products', href: '/products' },
+    { label: 'Electronics', href: '/products/electronics' },
+    { label: 'Current Page' }, // Last item is active by default
+  ]}
+/>
+
+// Custom separator
+<Breadcrumbs
+  items={[
+    { label: 'Home', href: '/' },
+    { label: 'About' },
+  ]}
+  separator=">"
+/>
+
+// With onClick handlers
+<Breadcrumbs
+  items={[
+    { label: 'Home', href: '/', onClick: () => console.log('Home clicked') },
+    { label: 'Current' },
+  ]}
+/>
+```
+
 ## Local Development (without publishing)
 Build and link the library into any local app:
 ```bash
@@ -273,3 +322,5 @@ This library expects the consuming app to provide:
 - **Autocomplete** - Input with search suggestions and keyboard navigation
 - **Alert** - Notification component with variants (success, error, warning, info)
 - **Avatar** - User avatar with image or initials support, multiple sizes and shapes
+- **Badge** - Badge component with variants and sizes, supports dot mode
+- **Breadcrumbs** - Navigation breadcrumb component with customizable separators

@@ -7,3 +7,5 @@ export * from './components/Accordion.jsx';
 export * from './components/Autocomplete.jsx';
 export * from './components/Alert.jsx';
 export * from './components/Avatar.jsx';
+export * from './components/Badge.jsx';
+export * from './components/Breadcrumbs.jsx';

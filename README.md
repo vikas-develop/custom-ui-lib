@@ -2,6 +2,10 @@
 
 Reusable React components by `@vk-develop`. A comprehensive collection of UI components including Button, Card, Input, Modal, Spinner, Accordion, Autocomplete, Alert, Avatar, Badge, Breadcrumbs, Calendar, Checkbox, CheckboxGroup, Chip, CircularProgress, Code, DateInput, DatePicker, DateRangePicker, Divider, Dropdown, Drawer, Navbar, NumberInput, Pagination, Popover, Progress, RadioGroup, RangeCalendar, ScrollShadow, Select, Skeleton, Slider, Snippet, Spacer, Switch, Table, Tabs, Toast, Textarea, TimeInput, Tooltip, and User.
 
+## 🌐 Live Demo
+
+View all components in action: **[https://custom-ui-library.netlify.app/](https://custom-ui-library.netlify.app/)**
+
 ## Install (after publish)
 ```bash
 npm install @vk-develop/custom-ui

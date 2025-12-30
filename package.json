@@ -1,44 +1,20 @@
 {
-  "name": "@vk-develop/custom-ui",
-  "version": "1.1.0",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
+  "name": "custom-ui-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for custom-ui component library and example app",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build --workspace=packages/custom-ui",
+    "dev": "npm start --workspace=apps/example-app",
+    "publish:lib": "npm publish --workspace=packages/custom-ui --access public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "A custom reusable React component library with Button, Card, Input, Modal, and Spinner components by vk-develop.",
-  "peerDependencies": {
-    "react": ">=17",
-    "react-dom": ">=17"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "@babel/preset-react": "^7.28.5",
-    "@rollup/plugin-babel": "^6.1.0",
-    "@rollup/plugin-commonjs": "^28.0.9",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/react": "^10.0.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "rollup": "^4.52.5",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^5.9.3"
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

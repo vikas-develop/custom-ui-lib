@@ -8,7 +8,7 @@ dist/
 # Example app (excluded from library repo)
 example-app/
 demo-app/
-
+demo/
 # IDE
 .vscode/
 .idea/

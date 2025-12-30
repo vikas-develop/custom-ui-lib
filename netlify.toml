@@ -1,0 +1,13 @@
+[build]
+  base = "demo"
+  command = "npm install && USE_LOCAL=false npm run build"
+  publish = "demo/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

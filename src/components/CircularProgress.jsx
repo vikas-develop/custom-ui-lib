@@ -35,6 +35,9 @@ export const CircularProgress = ({
 
   const svgStyle = {
     transform: 'rotate(-90deg)',
+    animation: variant === 'indeterminate' 
+      ? 'circular-progress-rotate 1.4s linear infinite' 
+      : 'none',
   };
 
   const circleStyle = {
@@ -53,6 +56,7 @@ export const CircularProgress = ({
     strokeDashoffset: variant === 'indeterminate' ? circumference * 0.25 : offset,
     transition: variant === 'determinate' ? 'stroke-dashoffset 0.3s ease' : 'none',
     animation: variant === 'indeterminate' ? 'circular-progress-spin 1.4s linear infinite' : 'none',
+    transformOrigin: 'center',
   };
 
   const labelStyle = {
@@ -66,15 +70,20 @@ export const CircularProgress = ({
     @keyframes circular-progress-spin {
       0% {
         stroke-dashoffset: ${circumference * 0.25};
-        transform: rotate(0deg);
       }
       50% {
         stroke-dashoffset: ${circumference * 0.75};
-        transform: rotate(180deg);
       }
       100% {
         stroke-dashoffset: ${circumference * 0.25};
-        transform: rotate(360deg);
+      }
+    }
+    @keyframes circular-progress-rotate {
+      from {
+        transform: rotate(-90deg);
+      }
+      to {
+        transform: rotate(270deg);
       }
     }
   `;
